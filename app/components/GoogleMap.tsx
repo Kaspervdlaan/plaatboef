@@ -80,8 +80,8 @@ export default function GoogleMap({
   return (
     <div
       ref={mapRef}
-      className="w-full rounded-lg overflow-hidden"
-      style={{ height: '250px', minHeight: '250px' }}
+      className="w-full rounded-sm overflow-hidden shadow-lg"
+      style={{ height: '300px', minHeight: '250px' }}
     />
   );
 }
