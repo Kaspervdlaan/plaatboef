@@ -205,7 +205,8 @@ h1 {
   transition: all 0.15s ease-out;
 }
 
-.btn-location:hover {
+.btn-location:hover,
+.btn-location.active {
   background: var(--accent);
   border-color: var(--accent);
   transform: translateY(-1px);
