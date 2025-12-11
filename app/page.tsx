@@ -166,6 +166,17 @@ export default function Home() {
                   <a href={`mailto:${currentData.contact.email}`}>{currentData.contact.email}</a>
                 </div>
               </div>
+              {/* <div className="store-contact">
+                <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
+                  <Image src="/insta.png" alt="Instagram" width={40} height={40} />
+                </a>
+                <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
+                  <Image src="/insta.png" alt="Instagram" width={40} height={40} />
+                </a>
+                <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
+                  <Image src="/insta.png" alt="Instagram" width={40} height={40} />
+                </a>
+              </div> */}
             </div>
           </section>
 
@@ -230,9 +241,18 @@ export default function Home() {
         <footer>
           <span>© De Plaatboef, {currentData.name} – In- en verkoop LP's, CD's en DVD's</span>
           <div className="footer-right">
-            <button className="scroll-top" onClick={scrollToTop}>
+            {/* <button className="scroll-top" onClick={scrollToTop}>
               Top
-            </button>
+            </button> */}
+            <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
+              <Image src="/insta.png" alt="Instagram" width={40} height={40} />
+            </a>
+            {/* <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
+              <Image src="/insta.png" alt="Instagram" width={40} height={40} />
+            </a>
+            <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
+              <Image src="/insta.png" alt="Instagram" width={40} height={40} />
+            </a> */}
           </div>
         </footer>
       </div>
