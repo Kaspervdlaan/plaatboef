@@ -28,6 +28,7 @@ interface LocationData {
     zoom: number;
   };
   image: string;
+  image2: string;
   openingHours: {
     maandag: string;
     dinsdag: string;
@@ -62,6 +63,7 @@ const locationData: Record<Location, LocationData> = {
       zoom: 15
     },
     image: '/rotterdam.jpg',
+    image2: '/jim_plaatboef.jpg',
     openingHours: {
       maandag: '12:00 – 18:00',
       dinsdag: '10:00 – 18:00',
@@ -93,7 +95,8 @@ const locationData: Record<Location, LocationData> = {
       lng: 5.1214,
       zoom: 15
     },
-    image: '/rotterdam.jpg', // You can replace this with a Utrecht image later
+    image: '/rotterdam.jpg',
+    image2: '/jim_plaatboef.jpg',
     openingHours: {
       maandag: '12:00 – 18:00',
       dinsdag: '10:00 – 18:00',
@@ -110,24 +113,20 @@ export default function Home() {
   const [selectedLocation, setSelectedLocation] = useState<Location>('rotterdam');
   const currentData = locationData[selectedLocation];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <div className="page">
       <div className="page-inner shadow-lg" id="top">
         <header className="site-header">
-          <div className="logo-wrap">
+          <div className="logo-wrap flex-1">
             <Image 
-              src="/logo_plaatboef.gif" 
+              src="/logo.png" 
               alt="De Plaatboef" 
-              width={650} 
-              height={250}
+              width={200} 
+              height={100}
               priority
             />
           </div>
-          <div className="location-buttons">
+          <div className="location-buttons flex-1">
             <button 
               className={`btn btn-location ${selectedLocation === 'rotterdam' ? 'active' : ''}`}
               onClick={() => setSelectedLocation('rotterdam')}
@@ -144,7 +143,6 @@ export default function Home() {
         </header>
 
         <main>
-          {/* LEFT COLUMN */}
           <section className="hero-text">
             <h1>{currentData.title}</h1>
             <div>
@@ -166,17 +164,6 @@ export default function Home() {
                   <a href={`mailto:${currentData.contact.email}`}>{currentData.contact.email}</a>
                 </div>
               </div>
-              {/* <div className="store-contact">
-                <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
-                  <Image src="/insta.png" alt="Instagram" width={40} height={40} />
-                </a>
-                <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
-                  <Image src="/insta.png" alt="Instagram" width={40} height={40} />
-                </a>
-                <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
-                  <Image src="/insta.png" alt="Instagram" width={40} height={40} />
-                </a>
-              </div> */}
             </div>
           </section>
 
@@ -215,15 +202,20 @@ export default function Home() {
           </section>
 
           <aside className="store-card" id="visit">
-            <div className="store-tag">Sinds 19xx</div>
-            
             <div className="store-photo">
               <Image
                 src={currentData.image}
                 alt={`Plaatboef winkel ${currentData.name}`}
-                fill
-                className="object-cover"
-                priority
+                width={500}
+                height={300}
+              />
+            </div>
+            <div className="store-photo">
+              <Image
+                src={currentData.image2}
+                alt={`Plaatboef winkel ${currentData.name}`}
+                width={500}
+                height={300}
               />
             </div>
           </aside>
@@ -241,18 +233,9 @@ export default function Home() {
         <footer>
           <span>© De Plaatboef, {currentData.name} – In- en verkoop LP's, CD's en DVD's</span>
           <div className="footer-right">
-            {/* <button className="scroll-top" onClick={scrollToTop}>
-              Top
-            </button> */}
             <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
               <Image src="/insta.png" alt="Instagram" width={40} height={40} />
             </a>
-            {/* <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
-              <Image src="/insta.png" alt="Instagram" width={40} height={40} />
-            </a>
-            <a href="https://www.instagram.com/plaatboefutrecht/" target="_blank" rel="noopener noreferrer">
-              <Image src="/insta.png" alt="Instagram" width={40} height={40} />
-            </a> */}
           </div>
         </footer>
       </div>

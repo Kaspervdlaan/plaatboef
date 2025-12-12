@@ -29,8 +29,7 @@ body {
 
 .page {
   width: 100%;
-  max-width: 1100px;
-  padding: 16px 40px;
+  margin: 16px;
 }
 
 /* Chevron pattern background */
@@ -55,7 +54,7 @@ body {
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 20px;
   border: 3px solid rgba(0, 0, 0, 1);
   background: #111;
@@ -66,16 +65,6 @@ body {
 .logo-wrap {
   display: flex;
   align-items: center;
-}
-
-.logo-text {
-  border: 2px solid #fff;
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-weight: 700;
-  font-size: 0.98rem;
 }
 
 /* Main layout */
@@ -186,9 +175,8 @@ h1 {
 .location-buttons {
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 12px;
-  margin-left: auto;
 }
 
 .btn-location {
@@ -271,34 +259,17 @@ h1 {
 /* Store card */
 .store-card {
   border-radius: var(--radius-sm); 
-  max-height: 300px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
   gap: 14px;
-  position: relative;
-  overflow: hidden;
-}
-
-.store-tag {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  padding: 5px 9px;
-  border-radius: var(--radius-pill);
-  background: #111;
-  color: #fff;
 }
 
 .store-photo {
-  width: 100%;
-  aspect-ratio: 16 / 9;
   border-radius: var(--radius-sm);
-  overflow: hidden;
-  background: #ddd;
-  position: relative;
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
 .store-info {
